@@ -1,6 +1,6 @@
 using System;
 
-namespace zad2.Models
+namespace Zad2.Models
 {
     public class ErrorViewModel
     {

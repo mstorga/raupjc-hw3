@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using zad2.Models;
+using Zad2.Models;
 
-namespace zad2.Data
+namespace Zad2.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

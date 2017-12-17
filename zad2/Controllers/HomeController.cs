@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using zad2.Models;
+using Zad2.Models;
 
-namespace zad2.Controllers
+namespace Zad2.Controllers
 {
     public class HomeController : Controller
     {

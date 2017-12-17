@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace zad2.Services
+namespace Zad2.Services
 {
     public interface IEmailSender
     {

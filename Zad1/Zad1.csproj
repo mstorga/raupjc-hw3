@@ -48,16 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DuplicateTodoItemException.cs" />
+    <Compile Include="ITodoRepository.cs" />
     <Compile Include="TodoAccessDeniedException.cs" />
     <Compile Include="TodoDbContext.cs" />
+    <Compile Include="TodoItem.cs" />
+    <Compile Include="TodoItemLabel.cs" />
     <Compile Include="TodoSqlRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
-      <Project>{87df08bf-775d-452e-afb0-0ceedbe35287}</Project>
-      <Name>Interfaces</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

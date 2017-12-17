@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
-namespace zad2.Views.Manage
+namespace Zad2.Views.Manage
 {
     public static class ManageNavPages
     {

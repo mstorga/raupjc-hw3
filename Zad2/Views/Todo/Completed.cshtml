@@ -1,0 +1,35 @@
+﻿@using System.Globalization
+@using Zad2.Models;
+@model Zad2.Models.CompletedViewModel
+@{
+    ViewData["Title"] = "Completed";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Completed</title>
+</head>
+<body>
+<h1>Completed Todos</h1>
+<br />
+  <div>  
+    
+    @if (Model.TodoItems.Count == 0)
+    {
+        <b>No completed todos!</b>
+    }
+    else
+    {
+        foreach (var todoItem in Model.TodoItems)
+        {
+            Html.RenderPartial("~/Views/Todo/PartialView.cshtml", todoItem );
+        }   
+    }
+         
+ </div> 
+<br/>
+<br />
+<p> <a class="btn" asp-action="Index">Back</a> </p>
+</body>
+</html>

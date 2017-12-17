@@ -1,0 +1,39 @@
+﻿@using System.Globalization
+@model Zad2.Models.TodoViewModel
+
+<b>
+    @Model.Text 
+    @if (!Model.DateCompleted.HasValue)
+    {
+        if (Model.DateDue != null)
+        {
+            <span style = "color:red" > @Model.DaysLeft() </span>
+         }
+    }
+    
+</b>
+<br />
+@if (Model.DateCompleted.HasValue)
+{
+    @Model.DateCompleted.Value.ToString("dd. MMMM yyyy.", new CultureInfo("hr-HR"))
+    <br />
+    <a asp-action="RemoveFromCompleted" asp-route-Id="@Model.Id">Remove from completed</a>
+}
+else
+{
+    if (Model.DateDue != null)
+    {
+         @Model.DateDue.Value.ToString("dd. MMMM yyyy.", new CultureInfo("hr-HR"))
+     }
+     else
+     {
+         <span>Nema datuma!</span>
+    }
+    <br />
+    <a asp-action="MarkAsCompleted" asp-route-Id="@Model.Id">Mark as completed</a>
+}
+<br />
+<br />
+<br />
+
+

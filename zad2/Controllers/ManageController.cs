@@ -10,11 +10,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using zad2.Models;
-using zad2.Models.ManageViewModels;
-using zad2.Services;
+using Zad2.Models;
+using Zad2.Models.ManageViewModels;
+using Zad2.Services;
+using IndexViewModel = Zad2.Models.ManageViewModels.IndexViewModel;
 
-namespace zad2.Controllers
+namespace Zad2.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]
@@ -495,7 +496,7 @@ namespace zad2.Controllers
         {
             return string.Format(
                 AuthenicatorUriFormat,
-                _urlEncoder.Encode("zad2"),
+                _urlEncoder.Encode("Zad2"),
                 _urlEncoder.Encode(email),
                 unformattedKey);
         }

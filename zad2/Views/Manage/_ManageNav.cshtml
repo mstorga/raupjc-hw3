@@ -1,4 +1,4 @@
-﻿@using zad2.Views.Manage
+﻿@using Zad2.Views.Manage
 @inject SignInManager<ApplicationUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();

@@ -8,11 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using zad2.Data;
-using zad2.Models;
-using zad2.Services;
+using Zad2.Data;
+using Zad2.Models;
+using Zad2.Services;
+using Zad1;
 
-namespace zad2
+namespace Zad2
 {
     public class Startup
     {
@@ -36,7 +37,12 @@ namespace zad2
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
+            services.AddTransient<ITodoRepository, TodoSqlRepository>();
+
             services.AddMvc();
+
+            services.AddScoped<TodoDbContext>(s =>
+                new TodoDbContext(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

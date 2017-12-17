@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 
-namespace zad2.Models.ManageViewModels
+namespace Zad2.Models.ManageViewModels
 {
     public class ExternalLoginsViewModel
     {

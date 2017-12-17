@@ -10,11 +10,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using zad2.Models;
-using zad2.Models.AccountViewModels;
-using zad2.Services;
+using Zad2.Models;
+using Zad2.Models.AccountViewModels;
+using Zad2.Services;
 
-namespace zad2.Controllers
+namespace Zad2.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]
