@@ -19,8 +19,8 @@ namespace Zad1
 
             modelBuilder.Entity<TodoItem>().HasKey(t => t.Id);
             modelBuilder.Entity<TodoItem>().Property(t => t.Text).IsRequired();
-            modelBuilder.Entity<TodoItem>().Property(t => t.DateCreated).IsRequired();
             modelBuilder.Entity<TodoItem>().Property(t => t.UserId).IsRequired();
+            modelBuilder.Entity<TodoItem>().Property(t => t.DateCreated).IsRequired();
             modelBuilder.Entity<TodoItem>().HasMany(t => t.Labels).WithMany(l => l.LabelTodoItems);
 
             modelBuilder.Entity<TodoItemLabel>().HasKey(l => l.Id);

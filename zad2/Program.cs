@@ -7,6 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace Zad2
 {
@@ -20,6 +21,17 @@ namespace Zad2
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                .UseSerilog((context, logger) =>
+                {
+                    var cnnstr = context.Configuration["ConnectionStrings:DefaultConnection"];
+
+                    logger.MinimumLevel.Error()
+                        .Enrich.FromLogContext()
+                        .WriteTo.MSSqlServer(
+                            connectionString: cnnstr,
+                            tableName: "ErrorLogs",
+                            autoCreateSqlTable: true);
+                })
                 .Build();
     }
 }
